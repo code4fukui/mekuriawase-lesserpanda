@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" href="data:">
-<title>福井めくりあわせ</title></head><body>
-<h1>福井めくりあわせ</h1>
+<title>レッサーパンダめくりあわせ</title></head><body>
+<h1>レッサーパンダめくりあわせ</h1>
 <script type="module">
 import { shuffle } from "https://js.sabae.cc/shuffle.js";
 import { CSV } from "https://js.sabae.cc/CSV.js";
@@ -10,8 +10,9 @@ const getTimeFormated = (dt) => {
 };
 
 window.onload = async () => {
-  const url = "https://code4fukui.github.io/fukui-spot/fuku-e-spot.csv";
-  const data = await CSV.fetchJSON(url);
+  const url = "https://code4fukui.github.io/lesserpanda-opendata/data/lesserpanda_sabae.csv";
+  const data0 = await CSV.fetchJSON(url);
+  const data = data0.filter(i => i.写真枚数 >= 2);
   console.log(data)
   game(data);
   retry.onclick = () => game(data);
@@ -19,7 +20,7 @@ window.onload = async () => {
 const game = (data) => {
   const tstart = new Date().getTime();
   const cards = [];
-  const ncards = 16;
+  const ncards = Math.min(data.length * 2, 16);
   shuffle(data);
   for (let i = 0; i < ncards / 2; i++) {
     const item = data[i];
@@ -74,14 +75,17 @@ const game = (data) => {
 const getContent = (data) => {
   const div = document.createElement("div");
   const i = data.item;
+  const name = i.個体名 == i.個体名カナ ? i.個体名 : `${i.個体名}(${i.個体名カナ})`;
+  const img = "https://code4fukui.github.io/lesserpanda-opendata/img/" + i.ID + "_" + data.type + ".jpg";
+  console.log(img);
   if (data.type == 1) {
     div.innerHTML = `<div class="card">
       <div class="front">
-        <div class="title">${i.name}</div>
+        <div class="title">${name}</div>
         <!--<br>${i.area || i.kana}</div>-->
         <!--<button>Wikipedia</button>-->
         <div class="type">
-          <div class="img" style="background-image:url(${i.image})"></div>
+          <div class="img" style="background-image:url(${img})"></div>
         </div>
       </div>
       <div class="back"></div>
@@ -95,9 +99,9 @@ const getContent = (data) => {
   } else {
     div.innerHTML = `<div class="card">
       <div class="front">
-        <div class="title"><br>${i.area}</div>
+        <div class="title">${name}</div>
         <div class="type">
-          <div class="img" style="background-image:url(${i.image})"></div>
+          <div class="img" style="background-image:url(${img})"></div>
         </div>
       </div>
       <div class="back"></div>
@@ -178,9 +182,9 @@ body {
   display: inline-block;
   width: 134px;
   height: 80px;
-  background-size: 120px auto;
+  background-size: 130px auto;
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: center 15%;
   over-flow-y: hidden;
 }
 @media screen and (max-width: 600px) {
@@ -221,8 +225,8 @@ a {
 <button id="retry">リトライ！</button><br>
 
 <div class="src">
-<a href=https://github.com/code4fukui/mekuriawase-fukui/>src on GitHub</a> forked めくりあわせ <a href=https://creativecommons.org/licenses/by/2.1/jp/ target=_blank>CC BY</a> <a href=http://fukuno.jig.jp/757 target=_blank>福野泰介 一日一創</a><br>
-DATA: <a href=https://github.com/code4fukui/fukui-spot>福井観光スポットオープンデータ</a><br>
+<a href=https://github.com/code4fukui/mekuriawase-lesserpanda/>src on GitHub</a> forked めくりあわせ <a href=https://creativecommons.org/licenses/by/2.1/jp/ target=_blank>CC BY</a> <a href=http://fukuno.jig.jp/757 target=_blank>福野泰介 一日一創</a><br>
+DATA: <a href=https://github.com/code4fukui/lesserpanda-opendata/>レッサーパンダオープンデータ</a><br>
 
 </div>
 
