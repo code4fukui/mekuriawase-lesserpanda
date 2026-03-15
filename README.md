@@ -1,8 +1,17 @@
-# レッサーパンダめくりあわせ
+# mekuriawase-lesserpanda
 
+A memory matching game featuring lesser pandas.
+
+## Demo
 https://code4fukui.github.io/mekuriawase-lesserpanda/
 
-## reference
+## Features
+- Memory matching game with lesser panda images
+- Automatically generated cards from a CSV data source
+- Retry button to replay the game
 
-- DATA: [レッサーパンダオープンデータ](https://github.com/code4fukui/lesserpanda-opendata)
-- forked from [徳川15代めくりあわせ](https://github.com/code4fukui/mekuriawase-tkgw15/)
+## Data / API
+The game uses open data from the [lesser panda open data](https://github.com/code4fukui/lesserpanda-opendata) project.
+
+## License
+This project is licensed under the MIT License.
