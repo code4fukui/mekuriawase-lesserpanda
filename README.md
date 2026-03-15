@@ -1,5 +1,7 @@
 # mekuriawase-lesserpanda
 
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
+
 A memory matching game featuring lesser pandas.
 
 ## Demo
