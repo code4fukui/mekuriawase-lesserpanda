@@ -16,4 +16,4 @@ https://code4fukui.github.io/mekuriawase-lesserpanda/
 The game uses open data from the [lesser panda open data](https://github.com/code4fukui/lesserpanda-opendata) project.
 
 ## License
-This project is licensed under the MIT License.
+MIT License — see [LICENSE](LICENSE).

@@ -8,9 +8,10 @@ https://code4fukui.github.io/mekuriawase-lesserpanda/
 ## 機能
 - レッサーパンダの個体名と写真を使っためくりあわせゲーム
 - クリアタイムの記録表示
+- リトライボタンで再プレイ可能
 
 ## データ
 [レッサーパンダオープンデータ](https://github.com/code4fukui/lesserpanda-opendata)を使用しています。
 
 ## ライセンス
-MIT License
+このプロジェクトはMITライセンスの下で提供されています。
