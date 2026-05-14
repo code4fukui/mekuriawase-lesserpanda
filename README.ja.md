@@ -4,7 +4,7 @@
 
 ## デモ
 
-**ゲームはこちらで遊べます: https://code4fukui.github.io/mekuriawase-lesserpanda/**
+**ゲームはこちらで遊べます: https://github.com/code4fukui/mekuriawase-lesserpanda
 
 ## 特徴
 

@@ -6,7 +6,7 @@ A simple, web-based memory matching game (mekuriawase) featuring adorable lesser
 
 ## Demo
 
-**Play the game here: https://code4fukui.github.io/mekuriawase-lesserpanda/**
+**Play the game here: https://github.com/code4fukui/mekuriawase-lesserpanda
 
 ## Features
 
